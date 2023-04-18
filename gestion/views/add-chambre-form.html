@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+h4 {
+   text-align: center;
+   color: #333;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+</style>
+    <title>Ajouter Un Chambre</title>
+</head>
+
+<body>
+
+<div id="view">
+    <h2><a href="index">Mon Hôtel</a></h2>
+    <h1> Ajouter Un Chambre</h1>
+    <h4>Noter: Numéro de Chambre est unique !</h4>
+
+    <form method="get" action="/add-chambre">
+            {{#message}}
+            <p>{{message}}</p>
+            {{/message}}
+
+            <label for="numeroChambre">Numéro de Chambre : </label>
+            <input type="number" name="numeroChambre" value="{{numeroChambre}}" required><br>
+            <label for="categorie">Catégorie : </label>
+            <input type="text" name="categorie" value="{{categorie}}" required><br>
+            <label for="typeDeLit">Type De Lit : </label>
+            <input type="text" name="typeDeLit" value="{{typeDeLit}}" required><br>
+            <label for="prix">Tarif/nuit : </label>
+            <input type="number" name="prix" value="{{prix}}" required><br>
+
+
+        <input type="submit" value="Ajouter">
+    </form>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Employee</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #4CAF50;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>Update Employee</h1>
+  <form method="POST" action="/update-employee/{{ employee.id }}">
+    <label>ID:</label>
+    <input type="number" name="id" value="{{ employee.id }}" required><br><br>
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ employee.name }}" required><br><br>
+    <label>Age:</label>
+    <input type="number" name="age" value="{{ employee.age }}" required><br><br>
+    <label>Identite:</label>
+    <input type="number" name="identite" value="{{ employee.identite }}" required><br><br>
+    <label>Address:</label>
+    <input type="text" name="address" value="{{ employee.address }}"><br><br>
+    <label>Tel:</label>
+    <input type="text" name="tel" value="{{ employee.tel }}"><br><br>
+    <label>Role:</label>
+    <input type="text" name="role" value="{{ employee.role }}"><br><br>
+    <label>Salary:</label>
+    <input type="number" name="salary" value="{{ employee.salary }}" required><br><br>
+    <label>Contrat:</label>
+    <input type="text" name="contrat" value="{{ employee.contrat }}" required><br><br>
+    <input type="submit" value="Update">
+  </form>
+  <a href="/employee-list" class="btn">Back   </a>
+</body>
+</html>

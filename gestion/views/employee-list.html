@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th {
+      background-color: #ddd;
+      font-weight: bold;
+      text-align: left;
+      padding: 0.5em;
+    }
+    
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5em;
+    }
+    
+    td a {
+      color: #136be0;
+      text-decoration: none;
+    }
+    
+    td a:hover {
+      text-decoration: underline;
+    }
+    
+    .create-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+
+    .logout-button {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    .index-button{
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+
+    .update-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+    a {
+      color: #336699;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Identite</th>
+        <th>Address</th>
+        <th>Tel</th>
+        <th>Role</th>
+        <th>Salary (€/h)</th>
+        <th>Contrat</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#employees}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{name}}</td>
+          <td>{{age}}</td>
+          <td>{{identite}}</td>
+          <td>{{address}}</td>
+          <td>{{tel}}</td>
+          <td>{{role}}</td>
+          <td>{{salary}}</td>
+          <td>{{contrat}}</td>
+          <td><a href="/employee-details/{{id}}">Details</a></td>
+        </tr>
+      {{/employees}}
+    </tbody>
+  </table>
+  <a class="create-employee-link" href="/create-employee">Create Employee</a>
+  <a class="logout-button" href="/logout">Logout</a>
+  <a class="index-button" href="/index">Back to Home</a>
+</body>
+</html>

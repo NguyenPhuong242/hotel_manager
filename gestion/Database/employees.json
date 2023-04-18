@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "name": "Phuong",
+      "age": 23,
+      "identite": 123456789,
+      "address": "22 rue de Forbin",
+      "tel": "02323836132",
+      "role": "manager",
+      "salary": 30,
+      "contrat": "2023-01-01"
+    },
+    {
+      "id": 2,
+      "name": "Phu",
+      "age": 18,
+      "identite": 222222222,
+      "address": "22 rue de Forbin",
+      "tel": "02323836132",
+      "role": "manager",
+      "salary": 12,
+      "contrat": "2023-01-01"
+    },
+    {
+      "id": 3,
+      "name": "Phong",
+      "age": 30,
+      "identite": 111111111,
+      "address": "22 rue de Forbin",
+      "tel": "02323836132",
+      "role": "manager",
+      "salary": 30,
+      "contrat": "2023-01-01"
+    }
+]

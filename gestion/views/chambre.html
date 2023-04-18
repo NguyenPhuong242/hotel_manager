@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\33758\Desktop\TP5Web\views\styles.css">
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      background-color: #ddd;
+      font-weight: bold;
+      text-align: left;
+      padding: 0.5em;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5em;
+    }
+
+    td a {
+      color: #136be0;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    .create-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .logout-button {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .update-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+  </style>
+    <title>Liste De Chambres</title>
+</head>
+
+<body>
+
+<div class="view" id="view">
+    <h2><a href="index">Mon Hôtel</a></h2>
+    <h1> Liste Des Chambres</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID Chambre</th>
+            <th>Numéro De Chambre</th>
+            <th>Catégorie</th>
+            <th>Type De Lit</th>
+            <th>Tarif</th>
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#chambres}}
+        <tr>
+            <td>{{idChambre}}</td>
+            <td>{{numeroChambre}}</td>
+            <td>{{categorie}}</td>
+            <td>{{typeDeLit}}</td>
+            <td>{{prix}}</td>
+
+            <td><a href="/chambre-details/{{idChambre}}">Details</a></td>
+        </tr>
+        {{/chambres}}
+        </tbody>
+    </table>
+    <form action="/add-chambre-form" methode="get">
+        <button id="button" type="submit">Ajouter </button>
+    </form>
+
+</div>
+
+</body>
+
+</html>

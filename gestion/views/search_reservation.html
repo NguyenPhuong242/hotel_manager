@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h2><a href="index">Mon Hôtel</a></h2>
+    <div>
+        <h1>{{num_found}} Réservations trouvés {{#page}} (page {{page}}/{{num_pages}}) {{/page}}</h1>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 ">
+
+        {{#results}}
+        <div class="col mb-3">
+
+            <li>
+                <a href='/reservation-details/{{id}}'>Numéro D'identité: {{identite}}, Date De Réservation: {{dateR}}, Le Chambre:{{numeroChambre}}</a>
+            </li>
+
+
+        </div>
+        {{/results}}
+
+
+
+    </div>
+
+    {{#next_page}}
+    <div>
+        <a href="/searchByIdentite?query={{query}}&page={{next_page}}">Page suivante</a>
+    </div>
+
+    {{/next_page}}
+
+
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+p {
+   text-align: center;
+   color: #333;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+label {
+  display: inline-block;
+  width: 300px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+</style>
+    <title>Ajouter une réservation</title>
+</head>
+
+<body>
+
+<div id="view">
+    <h2><a href="/index">Mon Hôtel</a></h2>
+    <h1> Ajouter une réservation</h1>
+    <form method="get" action="/add-reservation">
+
+        {{#message}}
+        <p>{{message}}</p>
+        {{/message}}
+
+        <label for="dateR"> Date De Réservation :</label>
+        <input type="date" name="dateR" value="{{dateR}}" required><br>
+        <label for="identite"> N° d'identité  : </label>
+        <input type="number" name="identite" value="{{identite}}" required><br>
+        <label for="numeroChambre"> N° de chambre :</label>
+        <input type="number" name="numeroChambre" value="{{numeroChambre}}" required><br>
+        <label for="nbPersonne"> Nombre De Personnes :</label>
+        <input type="number" name="nbPersonne"  value="{{nbPersonne}}" required><br>
+        <label for="dateA"> Date D'Arrivé :</label>
+        <input type="date" name="dateA" value="{{dateA}}" required><br>
+        <label for="dateD"> Date De Départ :</label>
+        <input type="date" name="dateD" value="{{dateD}}" required><br>
+
+        <p></p>
+        <input type="submit" value="Ajouter">
+    </form>
+</div>
+
+
+</body>
+
+</html>

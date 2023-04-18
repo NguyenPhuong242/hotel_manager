@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #34495e;
+    }
+
+    .box {
+      width: 300px;
+      padding: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #f1c40f;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .box h1 {
+      color: white;
+      text-transform: uppercase;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .box input[type="text"],
+    .box input[type="password"] {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 16px 10px;
+      width: 240px;
+      outline: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 24px;
+      transition: 0.25s;
+    }
+
+    .box input[type="submit"],
+    .box input[type="button"] {
+      border: 0;
+      background: #2ecc71;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      padding: 16px 40px;
+      outline: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .box input[type="submit"]:hover,
+    .box input[type="button"]:hover {
+      background: #27ae60;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <input class="form-control mb-2" type="text" name="user" placeholder="User">
+      <input class="form-control mb-2" type="password" name="password" placeholder="Password">
+      <input class="form-control btn btn-primary" type="submit" value="Sign in">
+      <input class="form-control btn btn-primary" type="button" value="Sign Up"
+        onclick="window.location.href='/new_user'">
+      <input class="form-control btn btn-primary" type="button" value="Back" onclick="window.location.href='/index'">
+  </div>
+</body>
+
+</html>

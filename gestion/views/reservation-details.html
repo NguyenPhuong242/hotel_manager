@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset=UTF-8>
+    <title>Films : détails</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Add styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #336699;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      width: 50%;
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+
+      background-color: #f2f2f2;
+    }
+
+    a {
+      color: #336699;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+<div id="view">
+    <h2><a href="/index">Mon Hôtel</a></h2>
+    <h1> Détails de réservation </h1>
+
+    <table>
+        <tr>
+            <th>ID réservation</th>
+            <td>{{ id }}</td>
+        </tr>
+        <tr>
+            <th> Date de réservation </th>
+            <td>{{ dateR }}</td>
+        </tr>
+        <tr>
+            <th>Identité De Client</th>
+            <td>{{ identite }}</td>
+        </tr>
+        <tr>
+            <th>N° de Chambre</th>
+            <td>{{ numeroChambre }}</td>
+        </tr>
+        <tr>
+            <th>Nombre de personnes</th>
+            <td>{{ nbPersonne }}</td>
+        </tr>
+        <tr>
+            <th>Date d'arrviée</th>
+            <td>{{ dateA }}</td>
+
+        <tr>
+            <th>Date de départ</th>
+            <td>{{ dateD }}</td>
+        </tr>
+    </table>
+
+
+    <form action="/edit-reservation-form/{{id}}" methode="get">
+        <button type="submit">Modifier</button>
+    </form>
+    <form action="/delete-reservation-form/{{id}}" methode="get">
+        <button type="submit">Supprimer</button>
+    </form>
+</div>
+</body>
+
+</html>

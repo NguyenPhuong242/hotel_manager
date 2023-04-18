@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List De Reservations</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      background-color: #ddd;
+      font-weight: bold;
+      text-align: left;
+      padding: 0.5em;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5em;
+    }
+
+    td a {
+      color: #136be0;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    .create-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .logout-button {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .update-employee-link {
+      display: block;
+      margin-top: 1em;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="view" id="view">
+    <h2><a href="index">Mon Hôtel</a></h2>
+    <h1> List De Réservations</h1>
+
+    <form class="form-inline my-2 my-lg-0" action="/searchByIdentite">
+
+        <input class="form-control me-2" type="text" placeholder="Entrer un identité" name="query" aria-label="Search"
+               value="{{query}}">
+        <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Rechercher">
+    </form>
+
+    <form class="form-inline my-2 my-lg-0" action="/searchReservationParDate">
+
+        <input class="form-control me-2" type="text" placeholder="Entrez une date" name="query" aria-label="Search"
+               value="{{query}}">
+        <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Rechercher">
+    </form>
+        <table>
+            <thead>
+            <tr>
+                <th>ID Réservation</th>
+                <th>Date de Réservation</th>
+                <th>N° Identité</th>
+                <th>Numéro De Chambre</th>
+                <th>Date D'Arrivée</th>
+                <th>Date De Départ</th>
+
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#reservations}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{dateR}}</td>
+                <td>{{identite}}</td>
+                <td>{{numeroChambre}}</td>
+                <td>{{dateA}}</td>
+                <td>{{dateD}}</td>
+
+                <td><a href="/reservation-details/{{id}}">Details</a></td>
+            </tr>
+            {{/reservations}}
+            </tbody>
+        </table>
+    <form action="/add-reservation-form" methode="get">
+        <button id="button" type="submit">Ajouter </button>
+    </form>
+
+    </div>
+
+</body>
+
+</html>

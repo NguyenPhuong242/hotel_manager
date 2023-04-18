@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #4CAF50;
+  }
+
+  </style>
+
+    <title>Modifier des infos d'une réservation</title>
+</head>
+
+<body>
+<div id="view">
+    <h2><a href="/index">Mon Hôtel</a></h2>
+    <h1>Modifier des infos d'une réservation </h1>
+    <h4>Date de réservation : '{{dateR}},  N° d'identité du client: {{identite}}, Le chambre{{numeroChambre}}'</h4>
+
+    <form method='get' action='/edit-reservation/{{id}}'>
+        {{#message}}
+        <p>{{message}}</p>
+        {{/message}}
+        <label for="dateR"> date de réservation :</label>
+        <input type="date" name="dateR" value="{{dateR}}" required><br>
+        <label for="identite"> identite du client : </label>
+        <input type="number" name="identite" value="{{identite}}" required><br>
+        <label for="numeroChambre"> le chambre :</label>
+        <input type="number" name="numeroChambre" value="{{numeroChambre}}"required><br>
+        <label for="nbPersonne"> nombre de Personne :</label>
+        <input type="number" name="nbPersonne" value="{{nbPersonne}}" required><br>
+        <label for="dateA"> date d'arrivé :</label>
+        <input type="date" name="dateA" value="{{dateA}}" required><br>
+        <label for="dateD"> date de départ :</label>
+        <input type="date" name="dateD" value="{{dateD}}" required><br>
+
+        <p></p>
+        <input type="submit" value="Enregistrer">
+    </form>
+</div>
+</body>
+
+</html>

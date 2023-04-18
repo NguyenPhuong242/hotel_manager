@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Supprimer le film</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        #view {
+            margin-top: 5%;
+            width: 50%;
+            height: 100%;
+            padding: 20px 100px 50px;
+            margin-left: 20%;
+        }
+    </style>
+    </head>
+
+    <body>
+    <div id="view">
+        <h2><a href="index">Mon Hôtel</a></h2>
+        <h1> Supprimer Un Chambre </h1>
+        Voulez-vous vraiment supprimer '{{numeroChambre}}' ?
+        <p></p>
+        <form action="/">
+            <input type="submit" value="Annuler">
+        </form>
+        <form action="/delete-chambre/{{idChambre}}" method="get">
+
+            <input type="submit" value="Supprimer">
+
+        </form>
+    </div>
+    </body>
+
+    </html>

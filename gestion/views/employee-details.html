@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Details</title>
+  <style>
+    /* Add styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #336699;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    a {
+      color: #336699;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Details</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>{{ employee.name }}</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>{{ employee.age }}</td>
+    </tr>
+    <tr>
+      <th>Identity Number</th>
+      <td>{{ employee.identite }}</td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td>{{ employee.address }}</td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td>{{ employee.tel }}</td>
+    </tr>
+    <tr>
+      <th>Role</th>
+      <td>{{ employee.role }}</td>
+    </tr>
+    <tr>
+      <th>Salary (€/h)</th>
+      <td>{{ employee.salary }}</td>
+    </tr>
+    <tr>
+      <th>Contract Date</th>
+      <td>{{ employee.contrat }}</td>
+    </tr>
+  </table>
+  <br><br>
+  <a href="/update-employee/{{ employee.id }}">Update Employee</a>
+  <br><br>
+  <a href="/delete-employee/{{ employee.id }}">Delete employee</a>
+  <br><br>
+  <a href="/employee-list">Return to Employee List</a>
+</body>
+</html>

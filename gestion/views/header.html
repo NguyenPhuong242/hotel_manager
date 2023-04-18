@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bienenvenue en NGUYENX2 hôtel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+<nav class="navbar bg-body-tertiary" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <img src="/views/logoHotel.svg" alt="Logo" width="90" height="90" >
+        <a class="nav-link text-dark"  href="/">NGUYENX2 Hôtel</a>
+        <a class="nav-link text-dark"  href="/login">HR</a>
+        <a class="nav-link text-dark" href= "/client">Clients</a>
+        <a class="nav-link text-dark" href="/chambre">Chambre</a>
+        <a class="nav-link text-dark" href="/reservation">Reservation</a>
+        <a  class="nav-link text-dark"  href="/login">Log In</a>
+
+        {{#authenticated}} {{/authenticated}}
+
+    </div>
+
+</nav>
+
+<main role="main" class="container" style="padding: 1em"></main>
+
+
+</body>
